@@ -15,9 +15,9 @@ const headingFont = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Gasthaus Quell · Alpine Fine Dining in Bad Gastein",
+  title: "Gasthaus Quell - Alpine Fine Dining in Bad Gastein",
   description:
-    "Experience Gasthaus Quell in Austria's Gastein Valley—seasonal alpine cuisine, curated wine pairings, and an AI concierge that books your table by phone.",
+    "Experience Gasthaus Quell in Austria's Gastein Valley with seasonal alpine cuisine, curated wine pairings, and an AI concierge that books your table by phone.",
   keywords: [
     "Gasthaus Quell",
     "Bad Gastein restaurant",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "AI reservation concierge",
   ],
   openGraph: {
-    title: "Gasthaus Quell · Alpine Fine Dining",
+    title: "Gasthaus Quell - Alpine Fine Dining",
     description:
       "Contemporary Austrian gastronomy with thermal spring views and an AI concierge reservation experience.",
     type: "website",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gasthaus Quell · Alpine Fine Dining",
+    title: "Gasthaus Quell - Alpine Fine Dining",
     description:
       "Contemporary Austrian gastronomy with thermal spring views and an AI concierge reservation experience.",
   },
@@ -48,9 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${bodyFont.variable} ${headingFont.variable} font-body antialiased`}
-      >
+      <body className={`${bodyFont.variable} ${headingFont.variable} font-body antialiased`}>
         {children}
       </body>
     </html>

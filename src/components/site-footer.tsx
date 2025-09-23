@@ -6,10 +6,10 @@ export function SiteFooter() {
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.4em] text-teal-100">Gasthaus Quell</p>
           <p className="max-w-sm text-sm text-slate-300">
-            Kaiser-Franz-Josef-Straﬂe 9, 5640 Bad Gastein ∑ Salzburg, Austria
+            Kaiser-Franz-Josef-Strasse 9, 5640 Bad Gastein - Salzburg, Austria
           </p>
           <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Gasthaus Quell. Crafted with respect for alpine terroir.
+            Copyright {new Date().getFullYear()} Gasthaus Quell. Crafted with respect for alpine terroir.
           </p>
         </div>
         <div className="grid gap-4 text-sm sm:grid-cols-2">
@@ -20,8 +20,8 @@ export function SiteFooter() {
           </div>
           <div className="space-y-1">
             <p className="font-heading text-white">Hours</p>
-            <p>Tuesday ñ Saturday</p>
-            <p>17:30 ñ 23:30</p>
+            <p>Tuesday - Saturday</p>
+            <p>17:30 - 23:30</p>
           </div>
         </div>
       </div>

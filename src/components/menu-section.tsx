@@ -1,1 +1,71 @@
-import { menuSections } from "@/data/menu";export function MenuSection() {  return (    <section id="menu" className="relative px-6 pb-24 sm:px-12 lg:px-24">      <div className="absolute inset-x-0 top-0 -z-10 h-60 bg-[radial-gradient(circle_at_top,rgba(91,33,182,0.15),transparent_70%)]" />      <div className="mx-auto max-w-6xl">        <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">          <div className="space-y-4">            <p className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.3em] text-violet-100">              Seasonal tasting journey            </p>            <h2 className="font-heading text-3xl text-white sm:text-4xl">              Ingredients drawn from alpine farms, glaciers, and forests.            </h2>            <p className="max-w-3xl text-base leading-relaxed text-slate-200">              Chef Lena Hofbauer and her brigade craft dishes that mirror the seasons. Our              tasting menu may be enjoyed à la carte or as a curated seven-course experience              with pairings.            </p>          </div>          <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm text-slate-200 backdrop-blur">            <p>Chef&apos;s tasting · €148 per guest</p>            <p className="mt-1 text-violet-100">Vegetarian sequence available upon request.</p>          </div>        </div>        <div className="grid gap-10">          {menuSections.map((section) => (            <div key={section.title} className="space-y-6">              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">                <div>                  <h3 className="font-heading text-2xl text-white">{section.title}</h3>                  <p className="mt-1 text-sm text-slate-200">{section.lead}</p>                </div>              </div>              <div className="grid gap-6 sm:grid-cols-2">                {section.items.map((dish) => (                  <article                    key={dish.name}                    className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/15 via-white/5 to-transparent p-6 backdrop-blur transition hover:border-violet-200/50"                  >                    <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.18),transparent_65%)] opacity-0 transition group-hover:opacity-100" />                    <div className="flex items-start justify-between gap-4">                      <h4 className="font-heading text-lg text-white">{dish.name}</h4>                      <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs text-slate-100">                        {dish.price}                      </span>                    </div>                    <p className="mt-3 text-sm leading-relaxed text-slate-200">                      {dish.description}                    </p>                    {dish.tags && (                      <div className="mt-4 flex flex-wrap gap-2">                        {dish.tags.map((tag) => (                          <span                            key={tag}                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white/70"                          >                            {tag}                          </span>                        ))}                      </div>                    )}                  </article>                ))}              </div>            </div>          ))}        </div>      </div>    </section>  );}
+import { menuSections } from "@/data/menu";
+
+export function MenuSection() {
+  return (
+    <section id="menu" className="relative px-6 pb-24 sm:px-12 lg:px-24">
+      <div className="absolute inset-x-0 top-0 -z-10 h-60 bg-[radial-gradient(circle_at_top,rgba(91,33,182,0.15),transparent_70%)]" />
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div className="space-y-4">
+            <p className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.3em] text-violet-100">
+              Seasonal tasting journey
+            </p>
+            <h2 className="font-heading text-3xl text-white sm:text-4xl">
+              Ingredients drawn from alpine farms, glaciers, and forests.
+            </h2>
+            <p className="max-w-3xl text-base leading-relaxed text-slate-200">
+              Chef Lena Hofbauer and her brigade craft dishes that mirror the seasons. Enjoy the tasting menu a la carte
+              or as a curated seven-course experience with pairings.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm text-slate-200 backdrop-blur">
+            <p>Chef&apos;s tasting - EUR 148 per guest</p>
+            <p className="mt-1 text-violet-100">Vegetarian sequence available upon request.</p>
+          </div>
+        </div>
+        <div className="grid gap-10">
+          {menuSections.map((section) => (
+            <div key={section.title} className="space-y-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h3 className="font-heading text-2xl text-white">{section.title}</h3>
+                  <p className="mt-1 text-sm text-slate-200">{section.lead}</p>
+                </div>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                {section.items.map((dish) => (
+                  <article
+                    key={dish.name}
+                    className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/15 via-white/5 to-transparent p-6 backdrop-blur transition hover:border-violet-200/50"
+                  >
+                    <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.18),transparent_65%)] opacity-0 transition group-hover:opacity-100" />
+                    <div className="flex items-start justify-between gap-4">
+                      <h4 className="font-heading text-lg text-white">{dish.name}</h4>
+                      <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs text-slate-100">
+                        {dish.price}
+                      </span>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-200">{dish.description}</p>
+                    {dish.tags && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {dish.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white/70"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+

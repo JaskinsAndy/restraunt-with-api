@@ -1,1 +1,106 @@
-const highlights = [  {    title: "Thermal spring dining room",    description:      "Floor-to-ceiling glass overlooks the steaming waters of the Gastein spring, with seasonal flora arranged nightly.",  },  {    title: "Cellar curated by sommeliers",    description:      "Austrian biodynamic vintners stand beside boutique Rieslings and Champagne grower selections for artful pairings.",  },  {    title: "Chef&apos;s table rituals",    description:      "Seven-course tasting journey featuring glacier trout, mountain herbs, and desserts finished tableside over dry ice.",  },];const timeline = [  {    time: "17:00",    label: "Apéritif in the mineral lounge",    detail: "Taste alpine vermouth spritzers with smoked alder bitters.",  },  {    time: "18:30",    label: "Kitchen introduction",    detail: "Meet Chef Lena Hofbauer as the brigade fires the first course.",  },  {    time: "20:00",    label: "Chef&apos;s interlude",    detail: "Tableside broth infusion featuring herbs from the thermal greenhouse.",  },  {    time: "21:45",    label: "Digestif at the spring terrace",    detail: "Finish with Vogelbeere schnapps beside the illuminated falls.",  },];export function ExperienceSection() {  return (    <section className="relative px-6 pb-24 sm:px-12 lg:px-24">      <div className="absolute inset-x-12 top-0 -z-10 hidden h-px bg-gradient-to-r from-transparent via-white/30 to-transparent sm:block" />      <div className="mx-auto max-w-6xl">        <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">          <div className="max-w-3xl space-y-4">            <p className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.3em] text-teal-100">              Gasthaus Quell experience            </p>            <h2 className="font-heading text-3xl text-white sm:text-4xl">              Refined Austrian hospitality shaped by the valley&apos;s rhythm.            </h2>            <p className="max-w-2xl text-base leading-relaxed text-slate-200">              Every evening unfolds with the cadence of the mountains—warm, unhurried, and              deeply personal. Our team orchestrates lighting, acoustics, and pacing so that              each course arrives with purpose.            </p>          </div>          <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm text-slate-200 backdrop-blur">            <p>Open Tuesday–Saturday from 17:30 · Last seating at 21:00</p>            <p className="mt-1 text-teal-100">Private dining salon available for up to 12 guests.</p>          </div>        </div>        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">          <div className="grid gap-6 sm:grid-cols-2">            {highlights.map((item) => (              <article                key={item.title}                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 backdrop-blur transition hover:border-teal-200/50"              >                <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.18),transparent_60%)] opacity-0 transition group-hover:opacity-100" />                <h3 className="font-heading text-xl text-white">                  {item.title}                </h3>                <p className="mt-3 text-sm leading-relaxed text-slate-200">                  {item.description}                </p>              </article>            ))}          </div>          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur">            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,116,144,0.22),transparent_70%)]" />            <div className="relative p-8">              <h3 className="font-heading text-2xl text-white">Evening cadence</h3>              <p className="mt-2 text-sm text-slate-200">                Signature reservations flow through curated touchpoints designed to calm,                delight, and surprise.              </p>              <div className="mt-8 space-y-6">                {timeline.map((item) => (                  <div key={item.time} className="flex gap-4">                    <div className="flex flex-col items-center text-teal-200">                      <span className="text-sm font-semibold">{item.time}</span>                      <span className="h-full w-px bg-gradient-to-b from-teal-200/60 to-transparent" aria-hidden />                    </div>                    <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-3">                      <p className="font-heading text-sm text-white">{item.label}</p>                      <p className="mt-1 text-xs text-slate-200/90">{item.detail}</p>                    </div>                  </div>                ))}              </div>            </div>          </div>        </div>      </div>    </section>  );}
+const highlights = [
+  {
+    title: "Thermal spring dining room",
+    description:
+      "Floor-to-ceiling glass overlooks the steaming waters of the Gastein spring, with seasonal flora arranged nightly.",
+  },
+  {
+    title: "Cellar curated by sommeliers",
+    description:
+      "Austrian biodynamic vintners stand beside boutique Rieslings and Champagne grower selections for artful pairings.",
+  },
+  {
+    title: "Chef&apos;s table rituals",
+    description:
+      "Seven-course tasting journey featuring glacier trout, mountain herbs, and desserts finished tableside over dry ice.",
+  },
+];
+
+const timeline = [
+  {
+    time: "17:00",
+    label: "Aperitif in the mineral lounge",
+    detail: "Taste alpine vermouth spritzers with smoked alder bitters.",
+  },
+  {
+    time: "18:30",
+    label: "Kitchen introduction",
+    detail: "Meet Chef Lena Hofbauer as the brigade fires the first course.",
+  },
+  {
+    time: "20:00",
+    label: "Chef&apos;s interlude",
+    detail: "Tableside broth infusion featuring herbs from the thermal greenhouse.",
+  },
+  {
+    time: "21:45",
+    label: "Digestif at the spring terrace",
+    detail: "Finish with Vogelbeere schnapps beside the illuminated falls.",
+  },
+];
+
+export function ExperienceSection() {
+  return (
+    <section className="relative px-6 pb-24 sm:px-12 lg:px-24">
+      <div className="absolute inset-x-12 top-0 -z-10 hidden h-px bg-gradient-to-r from-transparent via-white/30 to-transparent sm:block" />
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl space-y-4">
+            <p className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.3em] text-teal-100">
+              Gasthaus Quell experience
+            </p>
+            <h2 className="font-heading text-3xl text-white sm:text-4xl">
+              Refined Austrian hospitality shaped by the valley&apos;s rhythm.
+            </h2>
+            <p className="max-w-2xl text-base leading-relaxed text-slate-200">
+              Every evening unfolds with the cadence of the mountains, warm, unhurried, and deeply personal. Our team
+              orchestrates lighting, acoustics, and pacing so that each course arrives with purpose.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm text-slate-200 backdrop-blur">
+            <p>Open Tuesday to Saturday from 17:30 - Last seating at 21:00</p>
+            <p className="mt-1 text-teal-100">Private dining salon available for up to 12 guests.</p>
+          </div>
+        </div>
+        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {highlights.map((item) => (
+              <article
+                key={item.title}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 backdrop-blur transition hover:border-teal-200/50"
+              >
+                <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.18),transparent_60%)] opacity-0 transition group-hover:opacity-100" />
+                <h3 className="font-heading text-xl text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-200">{item.description}</p>
+              </article>
+            ))}
+          </div>
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,116,144,0.22),transparent_70%)]" />
+            <div className="relative p-8">
+              <h3 className="font-heading text-2xl text-white">Evening cadence</h3>
+              <p className="mt-2 text-sm text-slate-200">
+                Signature reservations flow through curated touchpoints designed to calm, delight, and surprise.
+              </p>
+              <div className="mt-8 space-y-6">
+                {timeline.map((item) => (
+                  <div key={item.time} className="flex gap-4">
+                    <div className="flex flex-col items-center text-teal-200">
+                      <span className="text-sm font-semibold">{item.time}</span>
+                      <span className="h-full w-px bg-gradient-to-b from-teal-200/60 to-transparent" aria-hidden />
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-3">
+                      <p className="font-heading text-sm text-white">{item.label}</p>
+                      <p className="mt-1 text-xs text-slate-200/90">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+

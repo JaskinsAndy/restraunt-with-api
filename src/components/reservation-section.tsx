@@ -152,8 +152,8 @@ export function ReservationSection() {
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm text-slate-200 backdrop-blur">
-              <p>+43 6434 111 222 · concierge@gasthausquell.at</p>
-              <p className="mt-1 text-teal-100">Available Tuesday–Saturday from 15:00</p>
+              <p>+43 6434 111 222 - concierge@gasthausquell.at</p>
+              <p className="mt-1 text-teal-100">Available Tuesday to Saturday from 15:00</p>
             </div>
           </div>
         </div>
@@ -387,7 +387,7 @@ export function ReservationSection() {
                 )}
               </form>
               <p className="text-[11px] uppercase tracking-[0.3em] text-white/60">
-                Calls powered by Twilio Voice · Available in English & German
+                Calls powered by Twilio Voice - Available in English & German
               </p>
             </div>
           </div>

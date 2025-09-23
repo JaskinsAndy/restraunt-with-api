@@ -278,7 +278,7 @@ function retry(message: string, actionUrl: string) {
 }
 
 function normaliseName(name: string) {
-  const cleaned = name.replace(/[^a-zA-ZäöüÄÖÜß\s'-]/g, " ").replace(/\s+/g, " ").trim();
+  const cleaned = name.replace(/[^a-zA-Z\\s'-]/g, " ").replace(/\s+/g, " ").trim();
   return cleaned
     .split(" ")
     .map((segment) =>

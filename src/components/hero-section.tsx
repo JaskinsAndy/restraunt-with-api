@@ -1,1 +1,81 @@
-import Link from "next/link";export function HeroSection() {  return (    <section      id="home"      className="relative isolate overflow-hidden px-6 pb-24 pt-28 sm:px-12 lg:px-24"    >      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,#2dd4bf15,transparent_60%)]" />      <div className="absolute left-1/2 top-8 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-teal-400/20 blur-3xl sm:h-[22rem] sm:w-[22rem]" />      <div className="mx-auto flex max-w-6xl flex-col gap-12 lg:flex-row">        <div className="max-w-3xl space-y-8">          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-sm tracking-wide text-teal-100 backdrop-blur">            Gasthaus Quell · Bad Gastein, Austria          </span>          <h1 className="font-heading text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl">            Alpine gastronomy where thermal springs meet modern elegance.          </h1>          <p className="max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">            Nestled beside the cascading waterfalls of Gastein Valley, Gasthaus Quell            celebrates Austrian terroir with contemporary finesse. Seasonal tasting menus,            rare alpine wines, and a warm Austrian welcome await each reservation.          </p>          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">            <Link              href="#reservations"              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-teal-400 via-cyan-400 to-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_20px_60px_-15px_rgba(45,212,191,0.6)] transition hover:from-teal-300 hover:to-sky-300"            >              Reserve a table            </Link>            <Link              href="#ai-concierge"              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"            >              Meet the AI concierge            </Link>          </div>          <dl className="grid gap-6 sm:grid-cols-3">            {[              {                label: "Chef&apos;s tasting",                value: "7 moments",              },              {                label: "Cellar program",                value: "450+ bottles",              },              {                label: "Spring view",                value: "All tables",              },            ].map((item) => (              <div                key={item.label}                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left backdrop-blur"              >                <dt className="text-xs uppercase tracking-[0.2em] text-teal-200/80">                  {item.label}                </dt>                <dd className="mt-1 font-heading text-xl text-white">{item.value}</dd>              </div>            ))}          </dl>        </div>        <div className="relative isolate mt-4 flex flex-1 items-center justify-center lg:mt-0">          <div className="relative w-full max-w-md rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 backdrop-blur">            <div className="absolute -top-6 right-8 hidden h-16 w-16 rounded-full bg-teal-300/30 blur-2xl sm:block" />            <div className="absolute -bottom-8 left-6 hidden h-24 w-24 rounded-full bg-sky-400/20 blur-3xl sm:block" />            <div className="space-y-6">              <h2 className="font-heading text-2xl text-white">                Tonight&apos;s alpine inspirations              </h2>              <ul className="space-y-4 text-sm text-slate-100/90">                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">                  Glacial trout crudo · green apple ice · smoked whey                </li>                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">                  Pinzgauer lamb saddle · spruce tips · black garlic ash                </li>                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">                  Kaiserschmarrn soufflé · browned butter ice cream                </li>              </ul>              <p className="text-xs uppercase tracking-[0.2em] text-teal-100/80">                Sourced within 120 km of Bad Gastein              </p>            </div>          </div>        </div>      </div>    </section>  );}
+import Link from "next/link";
+
+export function HeroSection() {
+  return (
+    <section
+      id="home"
+      className="relative isolate overflow-hidden px-6 pb-24 pt-28 sm:px-12 lg:px-24"
+    >
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,#2dd4bf15,transparent_60%)]" />
+      <div className="absolute left-1/2 top-8 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-teal-400/20 blur-3xl sm:h-[22rem] sm:w-[22rem]" />
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 lg:flex-row">
+        <div className="max-w-3xl space-y-8">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-sm tracking-wide text-teal-100 backdrop-blur">
+            Gasthaus Quell - Bad Gastein, Austria
+          </span>
+          <h1 className="font-heading text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Alpine gastronomy where thermal springs meet modern elegance.
+          </h1>
+          <p className="max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
+            Nestled beside the cascading waterfalls of Gastein Valley, Gasthaus Quell celebrates
+            Austrian terroir with contemporary finesse. Seasonal tasting menus, rare alpine wines, and
+            a warm Austrian welcome await each reservation.
+          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <Link
+              href="#reservations"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-teal-400 via-cyan-400 to-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_20px_60px_-15px_rgba(45,212,191,0.6)] transition hover:from-teal-300 hover:to-sky-300"
+            >
+              Reserve a table
+            </Link>
+            <Link
+              href="#ai-concierge"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
+            >
+              Meet the AI concierge
+            </Link>
+          </div>
+          <dl className="grid gap-6 sm:grid-cols-3">
+            {[
+              { label: "Chef&apos;s tasting", value: "7 moments" },
+              { label: "Cellar program", value: "450+ bottles" },
+              { label: "Spring view", value: "All tables" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left backdrop-blur"
+              >
+                <dt className="text-xs uppercase tracking-[0.2em] text-teal-200/80">{item.label}</dt>
+                <dd className="mt-1 font-heading text-xl text-white">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="relative isolate mt-4 flex flex-1 items-center justify-center lg:mt-0">
+          <div className="relative w-full max-w-md rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 backdrop-blur">
+            <div className="absolute -top-6 right-8 hidden h-16 w-16 rounded-full bg-teal-300/30 blur-2xl sm:block" />
+            <div className="absolute -bottom-8 left-6 hidden h-24 w-24 rounded-full bg-sky-400/20 blur-3xl sm:block" />
+            <div className="space-y-6">
+              <h2 className="font-heading text-2xl text-white">Tonight&apos;s alpine inspirations</h2>
+              <ul className="space-y-4 text-sm text-slate-100/90">
+                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                  Glacial trout crudo - green apple ice - smoked whey
+                </li>
+                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                  Pinzgauer lamb saddle - spruce tips - black garlic ash
+                </li>
+                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                  Kaiserschmarrn souffle - browned butter ice cream
+                </li>
+              </ul>
+              <p className="text-xs uppercase tracking-[0.2em] text-teal-100/80">
+                Sourced within 120 km of Bad Gastein
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
