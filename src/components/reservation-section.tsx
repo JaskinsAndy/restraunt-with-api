@@ -27,6 +27,11 @@ export function ReservationSection() {
   const [callNotes, setCallNotes] = useState("");
   const [callStatus, setCallStatus] = useState<FormStatus>({ state: "idle" });
 
+  const formHasMessage = formStatus.state === "success" || formStatus.state === "error";
+  const formMessage = formHasMessage ? formStatus.message : "";
+  const callHasMessage = callStatus.state === "success" || callStatus.state === "error";
+  const callMessage = callHasMessage ? callStatus.message : "";
+
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -280,7 +285,7 @@ export function ReservationSection() {
                     {formStatus.state === "success" && (
                       <CheckCircle2 className="mr-2 inline h-4 w-4" aria-hidden />
                     )}
-                    {formStatus.message}
+                    {formMessage}
                   </p>
                 )}
               </div>
@@ -382,7 +387,7 @@ export function ReservationSection() {
                     {callStatus.state === "success" && (
                       <CheckCircle2 className="mr-2 inline h-4 w-4" aria-hidden />
                     )}
-                    {callStatus.message}
+                    {callMessage}
                   </p>
                 )}
               </form>

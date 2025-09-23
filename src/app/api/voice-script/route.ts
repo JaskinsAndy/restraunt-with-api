@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       updateCallState(callSid, { step: "collectName" });
       const response = new VoiceResponse();
       const gather = response.gather({
-        input: "speech",
+        input: ["speech"],
         action: forwardStep("collectName"),
         method: "POST",
         speechTimeout: "auto",
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
 
       const response = new VoiceResponse();
       const gather = response.gather({
-        input: "speech",
+        input: ["speech"],
         action: forwardStep("collectPartySize"),
         method: "POST",
         speechTimeout: "auto",
@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
 
       const response = new VoiceResponse();
       const gather = response.gather({
-        input: "speech",
+        input: ["speech"],
         action: forwardStep("collectDateTime"),
         method: "POST",
         speechTimeout: "auto",
@@ -134,7 +134,6 @@ export async function POST(request: NextRequest) {
 
       const parsedDate = parseDate(speechResult, new Date(), {
         forwardDate: true,
-        timezone: 120,
       });
 
       if (!parsedDate) {
@@ -154,7 +153,7 @@ export async function POST(request: NextRequest) {
 
       const response = new VoiceResponse();
       const gather = response.gather({
-        input: "speech",
+        input: ["speech"],
         action: forwardStep("collectNotes"),
         method: "POST",
         speechTimeout: "auto",
@@ -176,7 +175,7 @@ export async function POST(request: NextRequest) {
 
       const response = new VoiceResponse();
       const gather = response.gather({
-        input: "speech",
+        input: ["speech"],
         action: forwardStep("confirm"),
         method: "POST",
         speechTimeout: "auto",
@@ -267,7 +266,7 @@ function buildError(message: string) {
 function retry(message: string, actionUrl: string) {
   const response = new VoiceResponse();
   const gather = response.gather({
-    input: "speech",
+    input: ["speech"],
     action: actionUrl,
     method: "POST",
     speechTimeout: "auto",

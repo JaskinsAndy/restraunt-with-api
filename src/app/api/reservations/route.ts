@@ -15,7 +15,7 @@ const reservationSchema = z.object({
     .optional()
     .or(z.literal("").transform(() => undefined)),
   partySize: z.coerce
-    .number({ invalid_type_error: "Party size must be a number" })
+    .number()
     .int()
     .min(1)
     .max(20),
