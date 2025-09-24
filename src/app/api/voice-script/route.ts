@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import twilio from "twilio";
 import { parseDate } from "chrono-node";
 import {
@@ -356,3 +356,5 @@ function formatForSpeech(date: Date) {
     timeZone: "Europe/Vienna",
   }).format(date);
 }
+
+
